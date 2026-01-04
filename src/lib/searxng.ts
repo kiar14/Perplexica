@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { getSearxngURL } from './config/serverRegistry';
 
 interface SearxngSearchOptions {

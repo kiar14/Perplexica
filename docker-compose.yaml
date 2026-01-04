@@ -1,17 +1,16 @@
 services:
   perplexica:
     image: itzcrazykns1337/perplexica:latest
+    build:
+      context: .
     ports:
       - '3000:3000'
     labels:
       - 'traefik.http.middlewares.mybasicauth.basicauth.users=Kiar_08:$2y$05$6kOpT.moNe4x0elXIF0IWO5MRh3o2i81/swoO/RqfyX5rD5J9lt0u'
     volumes:
       - data:/home/perplexica/data
-      - uploads:/home/perplexica/uploads
     restart: unless-stopped
 
 volumes:
   data:
     name: 'perplexica-data'
-  uploads:
-    name: 'perplexica-uploads'
